@@ -1,5 +1,5 @@
 export interface Note {
-	key: number;
+	key?: number;
 	title: string;
 	content: string;
 }
