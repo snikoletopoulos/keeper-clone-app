@@ -28,7 +28,7 @@ const App: React.FC = () => {
 				<Note
 					key={index}
 					arrayIndex={index}
-					deleteFunc={deleteTask}
+					onDelete={deleteTask}
 					title={note.title}
 					note={note.content}
 				/>

@@ -27,7 +27,7 @@ const Note: React.FC<Props> = props => {
 				type="submit"
 				onClick={e => {
 					e.preventDefault();
-					props.deleteFunc(props.arrayIndex);
+					props.onDelete(props.arrayIndex);
 				}}
 			>
 				{deleteIcon ? <DeleteForeverIcon /> : <DeleteIcon />}
