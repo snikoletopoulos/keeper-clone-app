@@ -21,7 +21,7 @@ module.exports = {
 		ecmaVersion: "latest",
 		sourceType: "module",
 	},
-	plugins: ["react", "@typescript-eslint"],
+	plugins: ["react", "react-hooks", "@typescript-eslint"],
 	rules: {
 		"no-console": "warn",
 		"react/prop-types": "off",
