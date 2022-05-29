@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import DeleteIcon from "@material-ui/icons/Delete";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 
-export default function Note(props) {
+const Note = props => {
 	const [deleteIcon, setDeleteIcon] = useState(false);
 
 	function handleHover(inButton) {
@@ -30,4 +30,6 @@ export default function Note(props) {
 			</button>
 		</article>
 	);
-}
+};
+
+export default Note;

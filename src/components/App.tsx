@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import Note from "./Note";
 import InputTask from "./InputTask";
 
-export default function App() {
+const App = () => {
 	const [tasks, setTasks] = useState([]);
 
 	function addTask(task) {
@@ -35,4 +35,6 @@ export default function App() {
 			<Footer />
 		</>
 	);
-}
+};
+
+export default App;

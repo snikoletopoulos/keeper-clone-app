@@ -1,7 +1,6 @@
-import React from "react";
 import AssignmentTurnedInIcon from "@material-ui/icons/AssignmentTurnedIn";
 
-export default function NavBar() {
+const NavBar = () => {
 	return (
 		<header>
 			<h1>
@@ -9,4 +8,6 @@ export default function NavBar() {
 			</h1>
 		</header>
 	);
-}
+};
+
+export default NavBar;
