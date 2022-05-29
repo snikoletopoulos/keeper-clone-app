@@ -1,4 +1,6 @@
-export const notes = [
+import { Note } from "../types/notes.types";
+
+export const notes: Note[] = [
 	{
 		key: 1,
 		title: "Delegation",
