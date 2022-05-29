@@ -8,11 +8,11 @@ export default function App() {
 	const [tasks, setTasks] = useState([]);
 
 	function addTask(task) {
-		setTasks((prevValue) => [...prevValue, task]);
+		setTasks(prevValue => [...prevValue, task]);
 	}
 
 	function deleteTask(task) {
-		setTasks((prevValue) => {
+		setTasks(prevValue => {
 			const newTaskList = [...prevValue];
 			newTaskList.splice(task, 1);
 			return newTaskList;

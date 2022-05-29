@@ -21,10 +21,11 @@ export default function Note(props) {
 				onMouseEnter={() => handleHover(true)}
 				onMouseLeave={() => handleHover(false)}
 				type="submit"
-				onClick={(e) => {
+				onClick={e => {
 					e.preventDefault();
 					props.deleteFunc(props.arrayIndex);
-				}}>
+				}}
+			>
 				{deleteIcon ? <DeleteForeverIcon /> : <DeleteIcon />}
 			</button>
 		</article>

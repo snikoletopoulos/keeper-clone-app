@@ -12,7 +12,7 @@ export default function InputTask({ handleClick }) {
 
 	function handleChange(e) {
 		const { name, value } = e.target;
-		setNote((prevNote) => ({ ...prevNote, [name]: value }));
+		setNote(prevNote => ({ ...prevNote, [name]: value }));
 	}
 
 	function addTask(e) {
