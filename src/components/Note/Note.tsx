@@ -4,7 +4,12 @@ import styles from "./Note.module.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
-interface Props {}
+interface Props {
+	title: string;
+	note: string;
+	arrayIndex: number;
+	onDelete: (index: number) => void;
+}
 
 const Note: React.FC<Props> = props => {
 	const [deleteIcon, setDeleteIcon] = useState(false);
