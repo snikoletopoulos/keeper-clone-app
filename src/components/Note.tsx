@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import DeleteIcon from "@material-ui/icons/Delete";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 
@@ -6,13 +7,13 @@ const Note = props => {
 const Note: React.FC<Props> = props => {
 	const [deleteIcon, setDeleteIcon] = useState(false);
 
-	function handleHover(inButton) {
+	const handleHover = (inButton: boolean) => {
 		if (inButton) {
 			setDeleteIcon(true);
 		} else {
 			setDeleteIcon(false);
 		}
-	}
+	};
 
 	return (
 		<article className="note">
