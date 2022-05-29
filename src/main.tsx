@@ -16,7 +16,13 @@ import App from "./App";
 
 //HINT: You will need to study the classes in teh styles.css file to appy styling.
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+const element = document.getElementById("root");
+
+if (!element) {
+	throw new Error("No element found");
+}
+
+ReactDOM.createRoot(element).render(
 	<React.StrictMode>
 		<App />
 	</React.StrictMode>
