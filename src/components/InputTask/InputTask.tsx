@@ -1,8 +1,9 @@
 import { useState } from "react";
+import styles from "./InputTask.module.css";
 
 import { Note } from "types/notes.types";
 
-import AddIcon from "@material-ui/icons/Add";
+import AddIcon from "@mui/icons-material/Add";
 import Fab from "@material-ui/core/Fab";
 import Zoom from "@material-ui/core/Zoom";
 
@@ -40,7 +41,7 @@ const InputTask: React.FC<Props> = ({ handleClick }) => {
 	};
 
 	return (
-		<form className="create-note" onClick={() => setExpansion(true)}>
+		<form className={styles["create-note"]} onClick={() => setExpansion(true)}>
 			{expansion && (
 				<input
 					onChange={handleChange}

@@ -1,7 +1,8 @@
 import { useState } from "react";
+import styles from "./Note.module.css";
 
-import DeleteIcon from "@material-ui/icons/Delete";
-import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+import DeleteIcon from "@mui/icons-material/Delete";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 interface Props {}
 
@@ -17,7 +18,7 @@ const Note: React.FC<Props> = props => {
 	};
 
 	return (
-		<article className="note">
+		<article className={styles.note}>
 			<h1>{props.title}</h1>
 			<p>{props.note}</p>
 			<button

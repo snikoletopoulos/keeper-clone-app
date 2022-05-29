@@ -1,6 +1,8 @@
+import styles from "./Footer.module.css";
+
 const Footer: React.FC = () => {
 	return (
-		<footer>
+		<footer className={styles.footer}>
 			<p>Copyright &copy; {new Date().getFullYear()}</p>
 		</footer>
 	);
