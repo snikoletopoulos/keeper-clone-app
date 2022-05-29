@@ -1,21 +1,23 @@
 import { useState } from "react";
 
+import { Note as INote } from "types/notes.types";
+
 import NavBar from "components/NavBar";
 import Footer from "components/Footer";
 import Note from "components/Note";
 import InputTask from "components/InputTask";
 
 const App: React.FC = () => {
-	const [tasks, setTasks] = useState([]);
+	const [notes, setNotes] = useState<INote[]>([]);
 
-	const addTask = task => {
-		setTasks(prevValue => [...prevValue, task]);
+	const addNote = (note: INote) => {
+		setNotes(prevValue => [...prevValue, note]);
 	};
 
-	const deleteTask = task => {
-		setTasks(prevValue => {
+	const deleteNote = (noteIndex: number) => {
+		setNotes(prevValue => {
 			const newTaskList = [...prevValue];
-			newTaskList.splice(task, 1);
+			newTaskList.splice(noteIndex, 1);
 			return newTaskList;
 		});
 	};
@@ -23,12 +25,12 @@ const App: React.FC = () => {
 	return (
 		<>
 			<NavBar />
-			<InputTask handleClick={addTask} />
-			{tasks.map((note, index) => (
+			<InputTask handleClick={addNote} />
+			{notes.map((note, index) => (
 				<Note
 					key={index}
 					arrayIndex={index}
-					onDelete={deleteTask}
+					onDelete={deleteNote}
 					title={note.title}
 					note={note.content}
 				/>
