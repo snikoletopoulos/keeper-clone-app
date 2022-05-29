@@ -1,32 +1,43 @@
 import { useState } from "react";
+
+import { Note } from "types/notes.types";
+
 import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
 import Zoom from "@material-ui/core/Zoom";
 
-const InputTask = ({ handleClick }) => {
-	const [note, setNote] = useState({
+interface Props {
+	handleClick: (task: Note) => void;
+}
+
+const InputTask: React.FC<Props> = ({ handleClick }) => {
+	const [note, setNote] = useState<Note>({
 		title: "",
 		content: "",
 	});
+
 	const [expansion, setExpansion] = useState(false);
 
-	function handleChange(e) {
-		const { name, value } = e.target;
+	const handleChange: React.ChangeEventHandler<
+		HTMLInputElement | HTMLTextAreaElement
+	> = event => {
+		const { name, value } = event.target;
 		setNote(prevNote => ({ ...prevNote, [name]: value }));
-	}
+	};
 
-	function addTask(e) {
-		e.preventDefault();
-		if (note.title !== "") {
-			handleClick(note);
-			setNote({
-				title: "",
-				content: "",
-			});
-		} else {
+	const addTask: React.FormEventHandler = event => {
+		event.preventDefault();
+		if (note.title === "") {
 			alert("Please enter a task");
+			return;
 		}
-	}
+
+		handleClick(note);
+		setNote({
+			title: "",
+			content: "",
+		});
+	};
 
 	return (
 		<form className="create-note" onClick={() => setExpansion(true)}>
@@ -45,7 +56,7 @@ const InputTask = ({ handleClick }) => {
 				value={note.content}
 				name="content"
 				placeholder="Take a note"
-				rows={expansion ? "3" : "1"}
+				rows={expansion ? 3 : 1}
 			/>
 			<Zoom in={expansion}>
 				<Fab onClick={addTask} type="submit">
