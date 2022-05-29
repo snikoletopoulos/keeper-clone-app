@@ -3,7 +3,8 @@ import { useState } from "react";
 import DeleteIcon from "@material-ui/icons/Delete";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 
-const Note = props => {
+interface Props {}
+
 const Note: React.FC<Props> = props => {
 	const [deleteIcon, setDeleteIcon] = useState(false);
 
