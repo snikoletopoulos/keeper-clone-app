@@ -6,7 +6,7 @@ import Footer from "components/Footer";
 // import Note from "components/Note";
 // import InputTask from "components/InputTask";
 
-function App() {
+const App: React.FC = () => {
 	const [tasks, setTasks] = useState([]);
 
 	const addTask = task => {

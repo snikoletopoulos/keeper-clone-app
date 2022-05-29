@@ -1,6 +1,6 @@
 import AssignmentTurnedInIcon from "@material-ui/icons/AssignmentTurnedIn";
 
-const NavBar = () => {
+const NavBar: React.FC = () => {
 	return (
 		<header>
 			<h1>
