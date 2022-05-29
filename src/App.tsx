@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./App.css";
 
-// import NavBar from "components/NavBar";
+import NavBar from "components/NavBar";
 import Footer from "components/Footer";
-// import Note from "components/Note";
-// import InputTask from "components/InputTask";
+import Note from "components/Note";
+import InputTask from "components/InputTask";
 
 const App: React.FC = () => {
 	const [tasks, setTasks] = useState([]);
@@ -23,7 +23,7 @@ const App: React.FC = () => {
 
 	return (
 		<>
-			{/* <NavBar />
+			<NavBar />
 			<InputTask handleClick={addTask} />
 			{tasks.map((note, index) => (
 				<Note
@@ -33,10 +33,10 @@ const App: React.FC = () => {
 					title={note.title}
 					note={note.content}
 				/>
-			))} */}
+			))}
 			<Footer />
 		</>
 	);
-}
+};
 
 export default App;
